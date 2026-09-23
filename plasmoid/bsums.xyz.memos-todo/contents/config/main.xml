@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
+      http://www.kde.org/standards/kcfg/1.0/kcfg.xsd">
+    <kcfgfile name=""/>
+    <!-- One entry per setting of the Cinnamon applet, with the same
+         defaults and ranges. The Cinnamon key is in each comment. -->
+    <group name="General">
+        <!-- server-url -->
+        <entry name="serverUrl" type="String">
+            <label>The base URL of your Memos server</label>
+            <default>https://memos.example.com</default>
+        </entry>
+        <!-- auth-token -->
+        <entry name="authToken" type="String">
+            <label>API access token, without the "Bearer " prefix</label>
+            <default></default>
+        </entry>
+        <!-- memo-id -->
+        <entry name="memoId" type="String">
+            <label>The ID of the memo to show</label>
+            <default>1</default>
+        </entry>
+        <!-- refresh-interval -->
+        <entry name="refreshInterval" type="Int">
+            <label>Refresh interval, in minutes</label>
+            <default>10</default>
+            <min>1</min>
+            <max>1440</max>
+        </entry>
+        <!-- popup-font-size -->
+        <entry name="popupFontSize" type="Int">
+            <label>Popup font size, in points</label>
+            <default>11</default>
+            <min>8</min>
+            <max>32</max>
+        </entry>
+        <!-- panel-font-size -->
+        <entry name="panelFontSize" type="Int">
+            <label>Panel font size, in points</label>
+            <default>10</default>
+            <min>6</min>
+            <max>24</max>
+        </entry>
+        <!-- popup-width -->
+        <entry name="popupWidth" type="Int">
+            <label>Popup width, in pixels</label>
+            <default>300</default>
+            <min>100</min>
+            <max>1000</max>
+        </entry>
+        <!-- scroll-interval -->
+        <entry name="scrollInterval" type="Int">
+            <label>Time to show each line on the panel, in seconds</label>
+            <default>5</default>
+            <min>1</min>
+            <max>60</max>
+        </entry>
+        <!-- set-panel-width -->
+        <entry name="setPanelWidth" type="Bool">
+            <label>Use a fixed panel width</label>
+            <default>false</default>
+        </entry>
+        <!-- panel-width -->
+        <entry name="panelWidth" type="Int">
+            <label>Fixed panel width, in pixels</label>
+            <default>150</default>
+            <min>20</min>
+            <max>1000</max>
+        </entry>
+        <!-- show-completed-panel -->
+        <entry name="showCompletedPanel" type="Bool">
+            <label>Show completed tasks in the panel</label>
+            <default>true</default>
+        </entry>
+        <!-- show-completed-popup -->
+        <entry name="showCompletedPopup" type="Bool">
+            <label>Show completed tasks in the popup</label>
+            <default>true</default>
+        </entry>
+        <!-- transition-duration -->
+        <entry name="transitionDuration" type="Int">
+            <label>Panel slide duration, in milliseconds</label>
+            <default>300</default>
+            <min>0</min>
+            <max>2000</max>
+        </entry>
+    </group>
+</kcfg>

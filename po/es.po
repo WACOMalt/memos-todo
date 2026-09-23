@@ -1,0 +1,149 @@
+# Memos ToDo translations for the KDE Plasma widget.
+# The strings shared with the Cinnamon applet keep their translations.
+msgid ""
+msgstr ""
+"Project-Id-Version: Memos ToDo\n"
+"Report-Msgid-Bugs-To: https://github.com/WACOMalt/memos-todo/issues\n"
+"PO-Revision-Date: 2026-09-23 00:00+0000\n"
+"Last-Translator: WACOMalt\n"
+"Language-Team: Spanish\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "General"
+msgstr "General"
+
+msgid "Connection"
+msgstr "Conexión"
+
+msgid "Server URL:"
+msgstr "URL del servidor:"
+
+msgid "The base URL of your Memos server"
+msgstr "La URL base de su servidor Memos"
+
+msgid "Access token:"
+msgstr "Token de acceso:"
+
+msgid "Your API Access Token (Bearer token not including 'Bearer ' prefix)"
+msgstr "Su token de acceso API (token de portador que no incluye el prefijo 'Bearer ')"
+
+msgid "Memo ID:"
+msgstr "ID del memo:"
+
+msgid "The ID of the memo you want to show (found in the memo URL or details)"
+msgstr "El ID del memo que desea mostrar (se encuentra en la URL o los detalles del memo)"
+
+msgid "Refresh interval:"
+msgstr "Intervalo de actualización:"
+
+msgid "%1 minute"
+msgid_plural "%1 minutes"
+msgstr[0] "%1 minuto"
+msgstr[1] "%1 minutos"
+
+msgid "Popup"
+msgstr "Menú"
+
+msgid "Popup font size:"
+msgstr "Tamaño de fuente del menú:"
+
+msgid "%1 pt"
+msgstr "%1 pt"
+
+msgid "Popup width:"
+msgstr "Ancho del menú:"
+
+msgid "%1 px"
+msgstr "%1 px"
+
+msgid "Show completed tasks in popup"
+msgstr "Mostrar tareas completadas en el menú"
+
+msgid "Panel"
+msgstr "Panel"
+
+msgid "Panel font size:"
+msgstr "Tamaño de fuente del panel:"
+
+msgid "Panel width:"
+msgstr "Ancho del panel:"
+
+msgid "Use a fixed width"
+msgstr "Usar un ancho fijo"
+
+msgid "Show completed tasks in panel"
+msgstr "Mostrar tareas completadas en el panel"
+
+msgid "Text cycle interval:"
+msgstr "Intervalo de ciclo de texto:"
+
+msgid "%1 second"
+msgid_plural "%1 seconds"
+msgstr[0] "%1 segundo"
+msgstr[1] "%1 segundos"
+
+msgid "Time to show each line before switching to the next"
+msgstr "Tiempo para mostrar cada línea antes de pasar a la siguiente"
+
+msgid "Panel slide duration:"
+msgstr "Duración del deslizamiento del panel:"
+
+msgid "%1 ms"
+msgstr "%1 ms"
+
+msgid "0 ms turns the slide animation off."
+msgstr "0 ms desactiva la animación de deslizamiento."
+
+msgid "Configure…"
+msgstr "Configurar…"
+
+msgid "Delete task"
+msgstr "Eliminar tarea"
+
+msgid "New task..."
+msgstr "Nueva tarea..."
+
+msgid "Add task"
+msgstr "Añadir tarea"
+
+msgid "Open in Browser"
+msgstr "Abrir en el navegador"
+
+msgid "Loading..."
+msgstr "Cargando..."
+
+msgid "Configure Settings"
+msgstr "Configurar ajustes"
+
+msgid "Error"
+msgstr "Error"
+
+msgid "Empty Memo"
+msgstr "Memo vacío"
+
+msgid "Memos ToDo"
+msgstr "Memos ToDo"
+
+msgid "Please configure Server URL, Token and Memo ID in settings."
+msgstr "Configure la URL del servidor, el token y el ID del memo en los ajustes."
+
+msgid "%1 open task"
+msgid_plural "%1 open tasks"
+msgstr[0] "%1 tarea pendiente"
+msgstr[1] "%1 tareas pendientes"
+
+msgid "Refresh"
+msgstr "Actualizar"
+
+msgid "Connection Error"
+msgstr "Error de conexión"
+
+msgid "Error %1"
+msgstr "Error %1"
+
+msgid "Parse Error"
+msgstr "Error de análisis"

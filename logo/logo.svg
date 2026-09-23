@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Memos ToDo logo: the check mark and list lines of the Cinnamon applet icon. -->
+  <defs>
+    <linearGradient id="ink" gradientUnits="userSpaceOnUse" x1="136" y1="0" x2="376" y2="0">
+      <stop offset="0" stop-color="#2f6fe4"/>
+      <stop offset="0.55" stop-color="#4e45d3"/>
+      <stop offset="1" stop-color="#8e3fe0"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#f1f0ec"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+  <rect x="48" y="48" width="416" height="416" rx="92" fill="url(#card)" filter="url(#shadow)"/>
+  <g stroke="url(#ink)" stroke-linecap="round" fill="none">
+    <path d="M136 196 H272" stroke-width="30"/>
+    <path d="M300 256 H376" stroke-width="30"/>
+    <path d="M268 312 H376" stroke-width="30"/>
+    <path d="M150 262 L206 318 L368 176" stroke-width="46" stroke-linejoin="round"/>
+  </g>
+</svg>

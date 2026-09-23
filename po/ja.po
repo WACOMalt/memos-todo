@@ -1,0 +1,146 @@
+# Memos ToDo translations for the KDE Plasma widget.
+# The strings shared with the Cinnamon applet keep their translations.
+msgid ""
+msgstr ""
+"Project-Id-Version: Memos ToDo\n"
+"Report-Msgid-Bugs-To: https://github.com/WACOMalt/memos-todo/issues\n"
+"PO-Revision-Date: 2026-09-23 00:00+0000\n"
+"Last-Translator: WACOMalt\n"
+"Language-Team: Japanese\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "General"
+msgstr "一般"
+
+msgid "Connection"
+msgstr "接続"
+
+msgid "Server URL:"
+msgstr "サーバーURL:"
+
+msgid "The base URL of your Memos server"
+msgstr "MemosサーバーのベースURL"
+
+msgid "Access token:"
+msgstr "アクセストークン:"
+
+msgid "Your API Access Token (Bearer token not including 'Bearer ' prefix)"
+msgstr "APIアクセストークン ('Bearer ' プレフィックスを含まないベアラートークン)"
+
+msgid "Memo ID:"
+msgstr "メモID:"
+
+msgid "The ID of the memo you want to show (found in the memo URL or details)"
+msgstr "表示したいメモのID (メモのURLまたは詳細にあります)"
+
+msgid "Refresh interval:"
+msgstr "更新間隔:"
+
+msgid "%1 minute"
+msgid_plural "%1 minutes"
+msgstr[0] "%1 分"
+
+msgid "Popup"
+msgstr "ポップアップ"
+
+msgid "Popup font size:"
+msgstr "ポップアップのフォントサイズ:"
+
+msgid "%1 pt"
+msgstr "%1 pt"
+
+msgid "Popup width:"
+msgstr "ポップアップの幅:"
+
+msgid "%1 px"
+msgstr "%1 px"
+
+msgid "Show completed tasks in popup"
+msgstr "ポップアップに完了したタスクを表示する"
+
+msgid "Panel"
+msgstr "パネル"
+
+msgid "Panel font size:"
+msgstr "パネルのフォントサイズ:"
+
+msgid "Panel width:"
+msgstr "パネルの幅:"
+
+msgid "Use a fixed width"
+msgstr "固定幅を使用する"
+
+msgid "Show completed tasks in panel"
+msgstr "パネルに完了したタスクを表示する"
+
+msgid "Text cycle interval:"
+msgstr "テキストの切り替え間隔:"
+
+msgid "%1 second"
+msgid_plural "%1 seconds"
+msgstr[0] "%1 秒"
+
+msgid "Time to show each line before switching to the next"
+msgstr "次の行に切り替えるまでの表示時間"
+
+msgid "Panel slide duration:"
+msgstr "パネルのスライド時間:"
+
+msgid "%1 ms"
+msgstr "%1 ms"
+
+msgid "0 ms turns the slide animation off."
+msgstr "0 ms にするとスライドアニメーションが無効になります。"
+
+msgid "Configure…"
+msgstr "設定…"
+
+msgid "Delete task"
+msgstr "タスクを削除"
+
+msgid "New task..."
+msgstr "新しいタスク..."
+
+msgid "Add task"
+msgstr "タスクを追加"
+
+msgid "Open in Browser"
+msgstr "ブラウザで開く"
+
+msgid "Loading..."
+msgstr "読み込み中..."
+
+msgid "Configure Settings"
+msgstr "設定を構成してください"
+
+msgid "Error"
+msgstr "エラー"
+
+msgid "Empty Memo"
+msgstr "メモがありません"
+
+msgid "Memos ToDo"
+msgstr "Memos ToDo"
+
+msgid "Please configure Server URL, Token and Memo ID in settings."
+msgstr "設定でサーバーURL、トークン、メモIDを構成してください。"
+
+msgid "%1 open task"
+msgid_plural "%1 open tasks"
+msgstr[0] "未完了のタスク %1 件"
+
+msgid "Refresh"
+msgstr "更新"
+
+msgid "Connection Error"
+msgstr "接続エラー"
+
+msgid "Error %1"
+msgstr "エラー %1"
+
+msgid "Parse Error"
+msgstr "解析エラー"

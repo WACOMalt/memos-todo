@@ -1,0 +1,4 @@
+dist/
+plasmoid/bsums.xyz.memos-todo/contents/locale/
+*.kate-swp
+__pycache__/

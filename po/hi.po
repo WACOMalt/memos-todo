@@ -1,0 +1,149 @@
+# Memos ToDo translations for the KDE Plasma widget.
+# The strings shared with the Cinnamon applet keep their translations.
+msgid ""
+msgstr ""
+"Project-Id-Version: Memos ToDo\n"
+"Report-Msgid-Bugs-To: https://github.com/WACOMalt/memos-todo/issues\n"
+"PO-Revision-Date: 2026-09-23 00:00+0000\n"
+"Last-Translator: WACOMalt\n"
+"Language-Team: Hindi\n"
+"Language: hi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "General"
+msgstr "सामान्य"
+
+msgid "Connection"
+msgstr "कनेक्शन"
+
+msgid "Server URL:"
+msgstr "सर्वर URL:"
+
+msgid "The base URL of your Memos server"
+msgstr "आपके मेमो सर्वर का आधार URL"
+
+msgid "Access token:"
+msgstr "एक्सेस टोकन:"
+
+msgid "Your API Access Token (Bearer token not including 'Bearer ' prefix)"
+msgstr "आपका API एक्सेस टोकन (Bearer टोकन जिसमें 'Bearer ' उपसर्ग शामिल नहीं है)"
+
+msgid "Memo ID:"
+msgstr "मेमो आईडी:"
+
+msgid "The ID of the memo you want to show (found in the memo URL or details)"
+msgstr "उस मेमो की आईडी जिसे आप दिखाना चाहते हैं (मेमो URL या विवरण में पाया जाता है)"
+
+msgid "Refresh interval:"
+msgstr "ताज़ा करने का अंतराल:"
+
+msgid "%1 minute"
+msgid_plural "%1 minutes"
+msgstr[0] "%1 मिनट"
+msgstr[1] "%1 मिनट"
+
+msgid "Popup"
+msgstr "पॉपअप"
+
+msgid "Popup font size:"
+msgstr "पॉपअप फ़ॉन्ट आकार:"
+
+msgid "%1 pt"
+msgstr "%1 pt"
+
+msgid "Popup width:"
+msgstr "पॉपअप चौड़ाई:"
+
+msgid "%1 px"
+msgstr "%1 px"
+
+msgid "Show completed tasks in popup"
+msgstr "पॉपअप में पूर्ण किए गए कार्य दिखाएं"
+
+msgid "Panel"
+msgstr "पैनल"
+
+msgid "Panel font size:"
+msgstr "पैनल फ़ॉन्ट आकार:"
+
+msgid "Panel width:"
+msgstr "पैनल चौड़ाई:"
+
+msgid "Use a fixed width"
+msgstr "निश्चित चौड़ाई का उपयोग करें"
+
+msgid "Show completed tasks in panel"
+msgstr "पैनल में पूर्ण किए गए कार्य दिखाएं"
+
+msgid "Text cycle interval:"
+msgstr "टेक्स्ट साइकिल अंतराल:"
+
+msgid "%1 second"
+msgid_plural "%1 seconds"
+msgstr[0] "%1 सेकंड"
+msgstr[1] "%1 सेकंड"
+
+msgid "Time to show each line before switching to the next"
+msgstr "अगली पंक्ति पर जाने से पहले प्रत्येक पंक्ति दिखाने का समय"
+
+msgid "Panel slide duration:"
+msgstr "पैनल स्लाइड अवधि:"
+
+msgid "%1 ms"
+msgstr "%1 मि.से."
+
+msgid "0 ms turns the slide animation off."
+msgstr "0 मि.से. पर स्लाइड एनीमेशन बंद हो जाता है।"
+
+msgid "Configure…"
+msgstr "कॉन्फ़िगर करें…"
+
+msgid "Delete task"
+msgstr "कार्य हटाएं"
+
+msgid "New task..."
+msgstr "नया कार्य..."
+
+msgid "Add task"
+msgstr "कार्य जोड़ें"
+
+msgid "Open in Browser"
+msgstr "ब्राउज़र में खोलें"
+
+msgid "Loading..."
+msgstr "लोड हो रहा है..."
+
+msgid "Configure Settings"
+msgstr "सेटिंग्स कॉन्फ़िगर करें"
+
+msgid "Error"
+msgstr "त्रुटि"
+
+msgid "Empty Memo"
+msgstr "खाली मेमो"
+
+msgid "Memos ToDo"
+msgstr "Memos ToDo"
+
+msgid "Please configure Server URL, Token and Memo ID in settings."
+msgstr "कृपया सेटिंग्स में सर्वर URL, टोकन और मेमो आईडी कॉन्फ़िगर करें।"
+
+msgid "%1 open task"
+msgid_plural "%1 open tasks"
+msgstr[0] "%1 खुला कार्य"
+msgstr[1] "%1 खुले कार्य"
+
+msgid "Refresh"
+msgstr "ताज़ा करें"
+
+msgid "Connection Error"
+msgstr "कनेक्शन त्रुटि"
+
+msgid "Error %1"
+msgstr "त्रुटि %1"
+
+msgid "Parse Error"
+msgstr "पार्स त्रुटि"

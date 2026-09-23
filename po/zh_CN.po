@@ -1,0 +1,146 @@
+# Memos ToDo translations for the KDE Plasma widget.
+# The strings shared with the Cinnamon applet keep their translations.
+msgid ""
+msgstr ""
+"Project-Id-Version: Memos ToDo\n"
+"Report-Msgid-Bugs-To: https://github.com/WACOMalt/memos-todo/issues\n"
+"PO-Revision-Date: 2026-09-23 00:00+0000\n"
+"Last-Translator: WACOMalt\n"
+"Language-Team: Chinese (Simplified)\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "General"
+msgstr "常规"
+
+msgid "Connection"
+msgstr "连接"
+
+msgid "Server URL:"
+msgstr "服务器 URL："
+
+msgid "The base URL of your Memos server"
+msgstr "Memos 服务器的基础 URL"
+
+msgid "Access token:"
+msgstr "访问令牌："
+
+msgid "Your API Access Token (Bearer token not including 'Bearer ' prefix)"
+msgstr "您的 API 访问令牌 (不包含 'Bearer ' 前缀的 Bearer 令牌)"
+
+msgid "Memo ID:"
+msgstr "备忘录 ID："
+
+msgid "The ID of the memo you want to show (found in the memo URL or details)"
+msgstr "您想要显示的备忘录 ID (在备忘录 URL 或详情中可以找到)"
+
+msgid "Refresh interval:"
+msgstr "刷新间隔："
+
+msgid "%1 minute"
+msgid_plural "%1 minutes"
+msgstr[0] "%1 分钟"
+
+msgid "Popup"
+msgstr "弹窗"
+
+msgid "Popup font size:"
+msgstr "弹窗字体大小："
+
+msgid "%1 pt"
+msgstr "%1 磅"
+
+msgid "Popup width:"
+msgstr "弹窗宽度："
+
+msgid "%1 px"
+msgstr "%1 像素"
+
+msgid "Show completed tasks in popup"
+msgstr "在弹窗中显示已完成的任务"
+
+msgid "Panel"
+msgstr "面板"
+
+msgid "Panel font size:"
+msgstr "面板字体大小："
+
+msgid "Panel width:"
+msgstr "面板宽度："
+
+msgid "Use a fixed width"
+msgstr "使用固定宽度"
+
+msgid "Show completed tasks in panel"
+msgstr "在面板中显示已完成的任务"
+
+msgid "Text cycle interval:"
+msgstr "文本循环间隔："
+
+msgid "%1 second"
+msgid_plural "%1 seconds"
+msgstr[0] "%1 秒"
+
+msgid "Time to show each line before switching to the next"
+msgstr "切换到下一行之前的显示时间"
+
+msgid "Panel slide duration:"
+msgstr "面板滑动持续时间："
+
+msgid "%1 ms"
+msgstr "%1 毫秒"
+
+msgid "0 ms turns the slide animation off."
+msgstr "设为 0 毫秒可关闭滑动动画。"
+
+msgid "Configure…"
+msgstr "配置…"
+
+msgid "Delete task"
+msgstr "删除任务"
+
+msgid "New task..."
+msgstr "新任务..."
+
+msgid "Add task"
+msgstr "添加任务"
+
+msgid "Open in Browser"
+msgstr "在浏览器中打开"
+
+msgid "Loading..."
+msgstr "加载中..."
+
+msgid "Configure Settings"
+msgstr "请配置设置"
+
+msgid "Error"
+msgstr "错误"
+
+msgid "Empty Memo"
+msgstr "空备忘录"
+
+msgid "Memos ToDo"
+msgstr "Memos ToDo"
+
+msgid "Please configure Server URL, Token and Memo ID in settings."
+msgstr "请在设置中配置服务器 URL、令牌和备忘录 ID。"
+
+msgid "%1 open task"
+msgid_plural "%1 open tasks"
+msgstr[0] "%1 个未完成的任务"
+
+msgid "Refresh"
+msgstr "刷新"
+
+msgid "Connection Error"
+msgstr "连接错误"
+
+msgid "Error %1"
+msgstr "错误 %1"
+
+msgid "Parse Error"
+msgstr "解析错误"

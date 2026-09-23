@@ -1,0 +1,21 @@
+{
+    "KPackageStructure": "Plasma/Applet",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "ben@bsums.xyz",
+                "Name": "WACOMalt"
+            }
+        ],
+        "BugReportUrl": "https://github.com/WACOMalt/memos-todo/issues",
+        "Category": "Utilities",
+        "Description": "Shows an interactive to-do list from a memo on your UseMemos server. Check, add and delete tasks from the panel. Requires a UseMemos server, an access token and a memo ID.",
+        "Icon": "view-task",
+        "Id": "bsums.xyz.memos-todo",
+        "License": "MIT",
+        "Name": "Memos ToDo",
+        "Version": "1.0.0",
+        "Website": "https://github.com/WACOMalt/memos-todo/tree/linux-kde"
+    },
+    "X-Plasma-API-Minimum-Version": "6.0"
+}
