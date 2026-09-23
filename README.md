@@ -2,7 +2,7 @@
 
 Memos ToDo is a cross-platform suite of native applications designed to seamlessly synchronize and display Markdown-style to-do lists hosted on a self-hosted [UseMemos](https://usememos.com/) server.
 
-This repository is split across three isolated branches, each containing a native implementation for a specific platform. 
+This repository is split across four isolated branches, each containing a native implementation for a specific platform. 
 
 ## Platform Branches
 
@@ -10,6 +10,8 @@ Please switch to the relevant branch for the codebase and installation instructi
 
 * 🐧 **[Linux (Cinnamon Applet)](https://github.com/WACOMalt/memos-todo/tree/linux-cinnamon)** 
     A native Javascript/Stjs applet built specifically for the Linux Mint Cinnamon desktop environment.
+* 🐧 **[Linux (KDE Plasma Widget)](https://github.com/WACOMalt/memos-todo/tree/linux-kde)** 
+    A native QML plasmoid for KDE Plasma 6, ported from the Cinnamon applet with the same features and settings.
 * 🪟 **[Windows (Taskbar Overlay)](https://github.com/WACOMalt/memos-todo/tree/windows)** 
     A lightweight, native C++ Win32 application that draws a transparent HUD directly above your taskbar.
 * 📱 **[Android (Mobile App & Home Widget)](https://github.com/WACOMalt/memos-todo/tree/android)** 
