@@ -6,4 +6,9 @@ ConfigModel {
         icon: "configure"
         source: "configGeneral.qml"
     }
+    ConfigCategory {
+        name: i18n("Desktop Widget")
+        icon: "preferences-desktop-color"
+        source: "configDesktop.qml"
+    }
 }

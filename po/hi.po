@@ -4,6 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Memos ToDo\n"
 "Report-Msgid-Bugs-To: https://github.com/WACOMalt/memos-todo/issues\n"
+"POT-Creation-Date: 2026-09-24 15:03-0400\n"
 "PO-Revision-Date: 2026-09-23 00:00+0000\n"
 "Last-Translator: WACOMalt\n"
 "Language-Team: Hindi\n"
@@ -16,8 +17,104 @@ msgstr ""
 msgid "General"
 msgstr "सामान्य"
 
+msgid "Desktop Widget"
+msgstr "डेस्कटॉप विजेट"
+
+msgid "Plasma theme"
+msgstr "Plasma थीम"
+
+msgid "Translucent"
+msgstr "पारभासी"
+
+msgid "Translucent light"
+msgstr "हल्का पारभासी"
+
+msgid "Yellow"
+msgstr "पीला"
+
+msgid "White"
+msgstr "सफ़ेद"
+
+msgid "Black"
+msgstr "काला"
+
+msgid "Red"
+msgstr "लाल"
+
+msgid "Orange"
+msgstr "नारंगी"
+
+msgid "Green"
+msgstr "हरा"
+
+msgid "Blue"
+msgstr "नीला"
+
+msgid "Pink"
+msgstr "गुलाबी"
+
+msgid "Custom colors"
+msgstr "कस्टम रंग"
+
+msgid ""
+"These settings apply when the widget is on the desktop. In a panel, the "
+"widget uses the General settings."
+msgstr ""
+"ये सेटिंग्स तब लागू होती हैं जब विजेट डेस्कटॉप पर होता है। पैनल में, विजेट सामान्य सेटिंग्स का "
+"उपयोग करता है।"
+
+msgid "Colors:"
+msgstr "रंग:"
+
+msgid "Background color:"
+msgstr "पृष्ठभूमि रंग:"
+
+msgid "Background color"
+msgstr "पृष्ठभूमि रंग"
+
+msgid "Text color:"
+msgstr "टेक्स्ट रंग:"
+
+msgid "Text color"
+msgstr "टेक्स्ट रंग"
+
+msgid "Background opacity:"
+msgstr "पृष्ठभूमि अपारदर्शिता:"
+
+#, qt-format
+msgid "%1 %"
+msgstr "%1%"
+
+msgid "Font size:"
+msgstr "फ़ॉन्ट आकार:"
+
+#, qt-format
+msgid "%1 pt"
+msgstr "%1 pt"
+
+msgid "Show:"
+msgstr "दिखाएं:"
+
+msgid "New task field and Open in Browser button"
+msgstr "नया कार्य फ़ील्ड और ब्राउज़र में खोलें बटन"
+
+msgid "Preview:"
+msgstr "पूर्वावलोकन:"
+
+msgid "A completed task"
+msgstr "एक पूर्ण कार्य"
+
+msgid "An open task"
+msgstr "एक खुला कार्य"
+
 msgid "Connection"
 msgstr "कनेक्शन"
+
+#, qt-format
+msgid ""
+"Memos ToDo needs a server running UseMemos, the open-source, self-hosted "
+"note service. Find out more at %1."
+msgstr "Memos ToDo को UseMemos चलाने वाले सर्वर की ज़रूरत है, जो एक ओपन-सोर्स, सेल्फ़-होस्टेड नोट सेवा है। अधिक जानकारी के लिए %1 देखें।"
 
 msgid "Server URL:"
 msgstr "सर्वर URL:"
@@ -31,6 +128,13 @@ msgstr "एक्सेस टोकन:"
 msgid "Your API Access Token (Bearer token not including 'Bearer ' prefix)"
 msgstr "आपका API एक्सेस टोकन (Bearer टोकन जिसमें 'Bearer ' उपसर्ग शामिल नहीं है)"
 
+msgid ""
+"All Memos ToDo widgets share the server URL and the access token. Each "
+"widget has its own memo ID."
+msgstr ""
+"सभी Memos ToDo विजेट सर्वर URL और एक्सेस टोकन साझा करते हैं। हर विजेट की अपनी मेमो "
+"आईडी होती है।"
+
 msgid "Memo ID:"
 msgstr "मेमो आईडी:"
 
@@ -40,6 +144,7 @@ msgstr "उस मेमो की आईडी जिसे आप दिखा
 msgid "Refresh interval:"
 msgstr "ताज़ा करने का अंतराल:"
 
+#, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
 msgstr[0] "%1 मिनट"
@@ -51,12 +156,10 @@ msgstr "पॉपअप"
 msgid "Popup font size:"
 msgstr "पॉपअप फ़ॉन्ट आकार:"
 
-msgid "%1 pt"
-msgstr "%1 pt"
-
 msgid "Popup width:"
 msgstr "पॉपअप चौड़ाई:"
 
+#, qt-format
 msgid "%1 px"
 msgstr "%1 px"
 
@@ -81,6 +184,7 @@ msgstr "पैनल में पूर्ण किए गए कार्य 
 msgid "Text cycle interval:"
 msgstr "टेक्स्ट साइकिल अंतराल:"
 
+#, qt-format
 msgid "%1 second"
 msgid_plural "%1 seconds"
 msgstr[0] "%1 सेकंड"
@@ -92,6 +196,7 @@ msgstr "अगली पंक्ति पर जाने से पहले 
 msgid "Panel slide duration:"
 msgstr "पैनल स्लाइड अवधि:"
 
+#, qt-format
 msgid "%1 ms"
 msgstr "%1 मि.से."
 
@@ -113,11 +218,20 @@ msgstr "कार्य जोड़ें"
 msgid "Open in Browser"
 msgstr "ब्राउज़र में खोलें"
 
+msgid "Please configure Server URL, Token and Memo ID in settings."
+msgstr "कृपया सेटिंग्स में सर्वर URL, टोकन और मेमो आईडी कॉन्फ़िगर करें।"
+
+msgid "Memo ID not set. Enter the ID of the memo to show in the settings."
+msgstr "मेमो आईडी सेट नहीं है। सेटिंग्स में दिखाने वाले मेमो की आईडी दर्ज करें।"
+
 msgid "Loading..."
 msgstr "लोड हो रहा है..."
 
 msgid "Configure Settings"
 msgstr "सेटिंग्स कॉन्फ़िगर करें"
+
+msgid "Memo ID not set"
+msgstr "मेमो आईडी सेट नहीं है"
 
 msgid "Error"
 msgstr "त्रुटि"
@@ -128,9 +242,7 @@ msgstr "खाली मेमो"
 msgid "Memos ToDo"
 msgstr "Memos ToDo"
 
-msgid "Please configure Server URL, Token and Memo ID in settings."
-msgstr "कृपया सेटिंग्स में सर्वर URL, टोकन और मेमो आईडी कॉन्फ़िगर करें।"
-
+#, qt-format
 msgid "%1 open task"
 msgid_plural "%1 open tasks"
 msgstr[0] "%1 खुला कार्य"
@@ -142,6 +254,13 @@ msgstr "ताज़ा करें"
 msgid "Connection Error"
 msgstr "कनेक्शन त्रुटि"
 
+msgid "Memo not found. Check the memo ID in the settings."
+msgstr "मेमो नहीं मिला। सेटिंग्स में मेमो आईडी जांचें।"
+
+msgid "Access token rejected. Check the token in the settings."
+msgstr "एक्सेस टोकन अस्वीकार किया गया। सेटिंग्स में टोकन जांचें।"
+
+#, qt-format
 msgid "Error %1"
 msgstr "त्रुटि %1"
 

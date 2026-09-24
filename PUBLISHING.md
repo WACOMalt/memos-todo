@@ -14,29 +14,33 @@ Use this file to keep the KDE Store listing consistent between releases.
 
 Copy this text into the store description field:
 
-> Memos ToDo shows an interactive to-do list from a memo on your self-hosted
-> UseMemos server (https://usememos.com).
->
-> The panel label cycles through the lines of the memo. Click it to open the
-> list. Click a task to check or uncheck it, click the trash icon to delete
-> it, and type in the "New task..." field to add one. The changes go to your
-> Memos server at once. "Open in Browser" opens the memo on the server.
->
-> A line that starts with ☐ is an open task and a line that starts with ☑
-> is a completed task, so the list stays readable in the Memos web interface.
-> The same memo works with the Memos ToDo applet for Cinnamon, the Windows
-> taskbar overlay and the Android app and widget.
->
-> Settings: server URL, access token, memo ID, refresh interval, popup and
-> panel font sizes, popup width, fixed panel width, text cycle interval,
-> slide duration, and whether to show completed tasks in the panel and in
-> the popup. Translated into Arabic, Chinese (Simplified), French, Hindi,
-> Japanese and Spanish.
->
-> Requirements: KDE Plasma 6, a UseMemos server, an API access token, and
-> the ID of the memo to show.
->
-> Source: https://github.com/WACOMalt/memos-todo/tree/linux-kde
+Memos ToDo shows an interactive to-do list from a memo on your self-hosted
+UseMemos server (https://usememos.com).
+
+The panel label cycles through the lines of the memo. Click it to open the
+list. Click a task to check or uncheck it, click the trash icon to delete
+it, and type in the "New task..." field to add one. The changes go to your
+Memos server at once. "Open in Browser" opens the memo on the server.
+
+Place the widget on the desktop to show the list as a note. Choose the
+Plasma theme, a translucent background, one of eight note colors, or your
+own background and text colors.
+
+A line that starts with ☐ is an open task and a line that starts with ☑
+is a completed task, so the list stays readable in the Memos web interface.
+The same memo works with the Memos ToDo applet for Cinnamon, the Windows
+taskbar overlay and the Android app and widget.
+
+Settings: server URL, access token, memo ID, refresh interval, popup and
+panel font sizes, popup width, fixed panel width, text cycle interval,
+slide duration, whether to show completed tasks in the panel and in the
+popup, and the colors, opacity and font size of the desktop widget. Translated into Arabic, Chinese (Simplified), French, Hindi,
+Japanese and Spanish.
+
+Requirements: KDE Plasma 6, a UseMemos server, an API access token, and
+the ID of the memo to show.
+
+Source: https://github.com/WACOMalt/memos-todo/tree/linux-kde
 
 ## Logo
 
@@ -51,12 +55,14 @@ rsvg-convert -w 512 -h 512 logo/logo.svg -o logo/logo.png
 
 ## Screenshots
 
-- `screenshots/popup.png`: the popup with sample tasks
-- `screenshots/settings.png`: the settings page
+- `screenshots/panel.png`: the panel label
+- `screenshots/popup.png`: the popup
+- `screenshots/widget.png`: the desktop widget in the Blue style, at an angle
+- `screenshots/settings.png`: the General settings page
 
-The screenshots use the sample memo of `tests/mock-memos-server.py`, so they
-show no personal data. Make new screenshots when the popup or the settings
-change.
+The screenshots show a demo memo and no server address, token or memo ID.
+Make new screenshots when the panel label, the popup, the desktop widget or
+the settings change.
 
 ## How to publish an update
 

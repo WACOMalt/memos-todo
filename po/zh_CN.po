@@ -4,6 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Memos ToDo\n"
 "Report-Msgid-Bugs-To: https://github.com/WACOMalt/memos-todo/issues\n"
+"POT-Creation-Date: 2026-09-24 15:03-0400\n"
 "PO-Revision-Date: 2026-09-23 00:00+0000\n"
 "Last-Translator: WACOMalt\n"
 "Language-Team: Chinese (Simplified)\n"
@@ -16,8 +17,102 @@ msgstr ""
 msgid "General"
 msgstr "常规"
 
+msgid "Desktop Widget"
+msgstr "桌面小部件"
+
+msgid "Plasma theme"
+msgstr "Plasma 主题"
+
+msgid "Translucent"
+msgstr "半透明"
+
+msgid "Translucent light"
+msgstr "半透明（浅色）"
+
+msgid "Yellow"
+msgstr "黄色"
+
+msgid "White"
+msgstr "白色"
+
+msgid "Black"
+msgstr "黑色"
+
+msgid "Red"
+msgstr "红色"
+
+msgid "Orange"
+msgstr "橙色"
+
+msgid "Green"
+msgstr "绿色"
+
+msgid "Blue"
+msgstr "蓝色"
+
+msgid "Pink"
+msgstr "粉色"
+
+msgid "Custom colors"
+msgstr "自定义颜色"
+
+msgid ""
+"These settings apply when the widget is on the desktop. In a panel, the "
+"widget uses the General settings."
+msgstr "这些设置在小部件位于桌面上时生效。在面板中，小部件使用“常规”设置。"
+
+msgid "Colors:"
+msgstr "颜色："
+
+msgid "Background color:"
+msgstr "背景颜色："
+
+msgid "Background color"
+msgstr "背景颜色"
+
+msgid "Text color:"
+msgstr "文字颜色："
+
+msgid "Text color"
+msgstr "文字颜色"
+
+msgid "Background opacity:"
+msgstr "背景不透明度："
+
+#, qt-format
+msgid "%1 %"
+msgstr "%1%"
+
+msgid "Font size:"
+msgstr "字体大小："
+
+#, qt-format
+msgid "%1 pt"
+msgstr "%1 磅"
+
+msgid "Show:"
+msgstr "显示："
+
+msgid "New task field and Open in Browser button"
+msgstr "新任务输入框和“在浏览器中打开”按钮"
+
+msgid "Preview:"
+msgstr "预览："
+
+msgid "A completed task"
+msgstr "已完成的任务"
+
+msgid "An open task"
+msgstr "未完成的任务"
+
 msgid "Connection"
 msgstr "连接"
+
+#, qt-format
+msgid ""
+"Memos ToDo needs a server running UseMemos, the open-source, self-hosted "
+"note service. Find out more at %1."
+msgstr "Memos ToDo 需要运行 UseMemos 的服务器，这是一款开源、自托管的笔记服务。了解更多请访问 %1。"
 
 msgid "Server URL:"
 msgstr "服务器 URL："
@@ -31,6 +126,13 @@ msgstr "访问令牌："
 msgid "Your API Access Token (Bearer token not including 'Bearer ' prefix)"
 msgstr "您的 API 访问令牌 (不包含 'Bearer ' 前缀的 Bearer 令牌)"
 
+msgid ""
+"All Memos ToDo widgets share the server URL and the access token. Each "
+"widget has its own memo ID."
+msgstr ""
+"所有 Memos ToDo 小部件共享服务器 URL 和访问令牌。每个小部件有自己的备忘录 "
+"ID。"
+
 msgid "Memo ID:"
 msgstr "备忘录 ID："
 
@@ -40,6 +142,7 @@ msgstr "您想要显示的备忘录 ID (在备忘录 URL 或详情中可以找�
 msgid "Refresh interval:"
 msgstr "刷新间隔："
 
+#, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
 msgstr[0] "%1 分钟"
@@ -50,12 +153,10 @@ msgstr "弹窗"
 msgid "Popup font size:"
 msgstr "弹窗字体大小："
 
-msgid "%1 pt"
-msgstr "%1 磅"
-
 msgid "Popup width:"
 msgstr "弹窗宽度："
 
+#, qt-format
 msgid "%1 px"
 msgstr "%1 像素"
 
@@ -80,6 +181,7 @@ msgstr "在面板中显示已完成的任务"
 msgid "Text cycle interval:"
 msgstr "文本循环间隔："
 
+#, qt-format
 msgid "%1 second"
 msgid_plural "%1 seconds"
 msgstr[0] "%1 秒"
@@ -90,6 +192,7 @@ msgstr "切换到下一行之前的显示时间"
 msgid "Panel slide duration:"
 msgstr "面板滑动持续时间："
 
+#, qt-format
 msgid "%1 ms"
 msgstr "%1 毫秒"
 
@@ -111,11 +214,20 @@ msgstr "添加任务"
 msgid "Open in Browser"
 msgstr "在浏览器中打开"
 
+msgid "Please configure Server URL, Token and Memo ID in settings."
+msgstr "请在设置中配置服务器 URL、令牌和备忘录 ID。"
+
+msgid "Memo ID not set. Enter the ID of the memo to show in the settings."
+msgstr "未设置备忘录 ID。请在设置中输入要显示的备忘录 ID。"
+
 msgid "Loading..."
 msgstr "加载中..."
 
 msgid "Configure Settings"
 msgstr "请配置设置"
+
+msgid "Memo ID not set"
+msgstr "未设置备忘录 ID"
 
 msgid "Error"
 msgstr "错误"
@@ -126,9 +238,7 @@ msgstr "空备忘录"
 msgid "Memos ToDo"
 msgstr "Memos ToDo"
 
-msgid "Please configure Server URL, Token and Memo ID in settings."
-msgstr "请在设置中配置服务器 URL、令牌和备忘录 ID。"
-
+#, qt-format
 msgid "%1 open task"
 msgid_plural "%1 open tasks"
 msgstr[0] "%1 个未完成的任务"
@@ -139,6 +249,13 @@ msgstr "刷新"
 msgid "Connection Error"
 msgstr "连接错误"
 
+msgid "Memo not found. Check the memo ID in the settings."
+msgstr "找不到备忘录。请检查设置中的备忘录 ID。"
+
+msgid "Access token rejected. Check the token in the settings."
+msgstr "访问令牌被拒绝。请检查设置中的令牌。"
+
+#, qt-format
 msgid "Error %1"
 msgstr "错误 %1"
 

@@ -4,6 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Memos ToDo\n"
 "Report-Msgid-Bugs-To: https://github.com/WACOMalt/memos-todo/issues\n"
+"POT-Creation-Date: 2026-09-24 15:03-0400\n"
 "PO-Revision-Date: 2026-09-23 00:00+0000\n"
 "Last-Translator: WACOMalt\n"
 "Language-Team: Arabic\n"
@@ -11,13 +12,110 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
 
 msgid "General"
 msgstr "عام"
 
+msgid "Desktop Widget"
+msgstr "أداة سطح المكتب"
+
+msgid "Plasma theme"
+msgstr "سمة Plasma"
+
+msgid "Translucent"
+msgstr "شفاف"
+
+msgid "Translucent light"
+msgstr "شفاف فاتح"
+
+msgid "Yellow"
+msgstr "أصفر"
+
+msgid "White"
+msgstr "أبيض"
+
+msgid "Black"
+msgstr "أسود"
+
+msgid "Red"
+msgstr "أحمر"
+
+msgid "Orange"
+msgstr "برتقالي"
+
+msgid "Green"
+msgstr "أخضر"
+
+msgid "Blue"
+msgstr "أزرق"
+
+msgid "Pink"
+msgstr "وردي"
+
+msgid "Custom colors"
+msgstr "ألوان مخصصة"
+
+msgid ""
+"These settings apply when the widget is on the desktop. In a panel, the "
+"widget uses the General settings."
+msgstr ""
+"تنطبق هذه الإعدادات عندما تكون الأداة على سطح المكتب. في الشريط، تستخدم "
+"الأداة الإعدادات العامة."
+
+msgid "Colors:"
+msgstr "الألوان:"
+
+msgid "Background color:"
+msgstr "لون الخلفية:"
+
+msgid "Background color"
+msgstr "لون الخلفية"
+
+msgid "Text color:"
+msgstr "لون النص:"
+
+msgid "Text color"
+msgstr "لون النص"
+
+msgid "Background opacity:"
+msgstr "عتامة الخلفية:"
+
+#, qt-format
+msgid "%1 %"
+msgstr "%1٪"
+
+msgid "Font size:"
+msgstr "حجم الخط:"
+
+#, qt-format
+msgid "%1 pt"
+msgstr "%1 نقطة"
+
+msgid "Show:"
+msgstr "إظهار:"
+
+msgid "New task field and Open in Browser button"
+msgstr "حقل المهمة الجديدة وزر الفتح في المتصفح"
+
+msgid "Preview:"
+msgstr "معاينة:"
+
+msgid "A completed task"
+msgstr "مهمة مكتملة"
+
+msgid "An open task"
+msgstr "مهمة مفتوحة"
+
 msgid "Connection"
 msgstr "الاتصال"
+
+#, qt-format
+msgid ""
+"Memos ToDo needs a server running UseMemos, the open-source, self-hosted "
+"note service. Find out more at %1."
+msgstr "يحتاج Memos ToDo إلى خادم يعمل عليه UseMemos، وهو خدمة ملاحظات مفتوحة المصدر تستضيفها بنفسك. اعرف المزيد على %1."
 
 msgid "Server URL:"
 msgstr "عنوان URL للخادم:"
@@ -31,20 +129,29 @@ msgstr "رمز الوصول:"
 msgid "Your API Access Token (Bearer token not including 'Bearer ' prefix)"
 msgstr "رمز الوصول إلى واجهة برمجة التطبيقات (رمز Bearer بدون بادئة 'Bearer ')"
 
+msgid ""
+"All Memos ToDo widgets share the server URL and the access token. Each "
+"widget has its own memo ID."
+msgstr ""
+"تشترك جميع أدوات Memos ToDo في عنوان URL للخادم ورمز الوصول. لكل أداة معرف "
+"مذكرة خاص بها."
+
 msgid "Memo ID:"
 msgstr "معرف المذكرة:"
 
 msgid "The ID of the memo you want to show (found in the memo URL or details)"
-msgstr "معرف المذكرة التي تريد إظهارها (موجود في عنوان URL للمذكرة أو تفاصيلها)"
+msgstr ""
+"معرف المذكرة التي تريد إظهارها (موجود في عنوان URL للمذكرة أو تفاصيلها)"
 
 msgid "Refresh interval:"
 msgstr "فترة التحديث:"
 
+#, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
 msgstr[0] "%1 دقيقة"
-msgstr[1] "دقيقة واحدة"
-msgstr[2] "دقيقتان"
+msgstr[1] "%1 دقيقة"
+msgstr[2] "%1 دقيقتان"
 msgstr[3] "%1 دقائق"
 msgstr[4] "%1 دقيقة"
 msgstr[5] "%1 دقيقة"
@@ -55,12 +162,10 @@ msgstr "القائمة المنبثقة"
 msgid "Popup font size:"
 msgstr "حجم خط القائمة المنبثقة:"
 
-msgid "%1 pt"
-msgstr "%1 نقطة"
-
 msgid "Popup width:"
 msgstr "عرض القائمة المنبثقة:"
 
+#, qt-format
 msgid "%1 px"
 msgstr "%1 بكسل"
 
@@ -85,11 +190,12 @@ msgstr "إظهار المهام المكتملة في الشريط"
 msgid "Text cycle interval:"
 msgstr "فترة دورة النص:"
 
+#, qt-format
 msgid "%1 second"
 msgid_plural "%1 seconds"
 msgstr[0] "%1 ثانية"
-msgstr[1] "ثانية واحدة"
-msgstr[2] "ثانيتان"
+msgstr[1] "%1 ثانية"
+msgstr[2] "%1 ثانيتان"
 msgstr[3] "%1 ثوانٍ"
 msgstr[4] "%1 ثانية"
 msgstr[5] "%1 ثانية"
@@ -100,6 +206,7 @@ msgstr "الوقت لعرض كل سطر قبل الانتقال إلى التا�
 msgid "Panel slide duration:"
 msgstr "مدة انزلاق الشريط:"
 
+#, qt-format
 msgid "%1 ms"
 msgstr "%1 مللي ثانية"
 
@@ -121,11 +228,21 @@ msgstr "إضافة مهمة"
 msgid "Open in Browser"
 msgstr "فتح في المتصفح"
 
+msgid "Please configure Server URL, Token and Memo ID in settings."
+msgstr "يرجى ضبط عنوان URL للخادم والرمز ومعرف المذكرة في الإعدادات."
+
+msgid "Memo ID not set. Enter the ID of the memo to show in the settings."
+msgstr ""
+"لم يتم تعيين معرف المذكرة. أدخل معرف المذكرة المراد عرضها في الإعدادات."
+
 msgid "Loading..."
 msgstr "جاري التحميل..."
 
 msgid "Configure Settings"
 msgstr "اضبط الإعدادات"
+
+msgid "Memo ID not set"
+msgstr "لم يتم تعيين معرف المذكرة"
 
 msgid "Error"
 msgstr "خطأ"
@@ -136,14 +253,12 @@ msgstr "مذكرة فارغة"
 msgid "Memos ToDo"
 msgstr "Memos ToDo"
 
-msgid "Please configure Server URL, Token and Memo ID in settings."
-msgstr "يرجى ضبط عنوان URL للخادم والرمز ومعرف المذكرة في الإعدادات."
-
+#, qt-format
 msgid "%1 open task"
 msgid_plural "%1 open tasks"
-msgstr[0] "لا مهام مفتوحة"
-msgstr[1] "مهمة مفتوحة واحدة"
-msgstr[2] "مهمتان مفتوحتان"
+msgstr[0] "%1 مهمة مفتوحة"
+msgstr[1] "%1 مهمة مفتوحة"
+msgstr[2] "%1 مهمتان مفتوحتان"
 msgstr[3] "%1 مهام مفتوحة"
 msgstr[4] "%1 مهمة مفتوحة"
 msgstr[5] "%1 مهمة مفتوحة"
@@ -154,6 +269,13 @@ msgstr "تحديث"
 msgid "Connection Error"
 msgstr "خطأ في الاتصال"
 
+msgid "Memo not found. Check the memo ID in the settings."
+msgstr "لم يتم العثور على المذكرة. تحقق من معرف المذكرة في الإعدادات."
+
+msgid "Access token rejected. Check the token in the settings."
+msgstr "تم رفض رمز الوصول. تحقق من الرمز في الإعدادات."
+
+#, qt-format
 msgid "Error %1"
 msgstr "خطأ %1"
 

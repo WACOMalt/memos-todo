@@ -17,6 +17,8 @@ with the same features and settings.
 - **Add tasks**: type in the "New task..." field and press Enter or click "+".
 - **Delete tasks**: click the trash icon next to a task.
 - **Open in Browser**: opens the memo on your Memos server.
+- **Desktop widget**: on the desktop, the widget shows the list itself, like
+  a sticky note, with a choice of colors.
 - **Customizable**: font sizes, popup width, fixed panel width, cycle
   interval, slide duration, and whether to show completed tasks.
 - **Translated** into Arabic, Chinese (Simplified), French, Hindi, Japanese
@@ -58,7 +60,7 @@ Right-click the widget and select "Configure Memos ToDo...".
 | --- | --- | --- |
 | Server URL | `https://memos.example.com` | The base URL of your Memos server |
 | Access token | (empty) | Your API access token, without the `Bearer ` prefix |
-| Memo ID | `1` | The ID of the memo to show, from the memo URL: `<server>/memos/<id>` |
+| Memo ID | (empty) | The ID of the memo to show, from the memo URL: `<server>/memos/<id>`. Until it is set, the widget shows "Memo ID not set". |
 | Refresh interval | 10 minutes | How often to fetch the memo again |
 | Popup font size | 11 pt | |
 | Popup width | 300 px | |
@@ -69,7 +71,32 @@ Right-click the widget and select "Configure Memos ToDo...".
 | Text cycle interval | 5 seconds | Time to show each line before the next |
 | Panel slide duration | 300 ms | 0 ms turns the animation off |
 
+All Memos ToDo widgets share the server URL and the access token: set them
+in one widget and the others use them too. Each widget has its own memo ID,
+so each one can show a different memo. The shared values are in
+`~/.config/memos-todo/server.conf`, which only your user can read.
+
 The right-click menu also has "Refresh" and "Open in Browser".
+
+### Desktop widget
+
+![The desktop widget](screenshots/widget.png)
+
+Drag the widget from "Add Widgets" to the desktop instead of a panel. On the
+desktop it shows the task list, the "New task..." field and the "Open in
+Browser" button, and you can resize it. The "Desktop Widget" page of the
+settings sets its look:
+
+| Setting | Default | Description |
+| --- | --- | --- |
+| Colors | Plasma theme | Plasma theme, Translucent, Translucent light, Yellow, White, Black, Red, Orange, Green, Blue, Pink, or Custom colors |
+| Background color, Text color | yellow, dark olive | The colors of "Custom colors". Custom colors start from the colors of the preset that was selected before. |
+| Background opacity | 100 % | Lets the desktop show through a colored background |
+| Font size | 11 pt | |
+| Show | on | The "New task..." field and the "Open in Browser" button |
+
+The connection and "Show completed tasks in popup" settings of the General
+page apply to the desktop widget as well.
 
 ## Differences from the Cinnamon applet
 

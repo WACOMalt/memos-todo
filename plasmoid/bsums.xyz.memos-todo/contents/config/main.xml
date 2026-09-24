@@ -17,10 +17,12 @@
             <label>API access token, without the "Bearer " prefix</label>
             <default></default>
         </entry>
-        <!-- memo-id -->
+        <!-- memo-id. The Cinnamon applet has "1" as its default, but a
+             Memos server gives each memo a random ID, so here the default
+             is empty and the widget says that the memo ID is not set. -->
         <entry name="memoId" type="String">
             <label>The ID of the memo to show</label>
-            <default>1</default>
+            <default></default>
         </entry>
         <!-- refresh-interval -->
         <entry name="refreshInterval" type="Int">
@@ -85,6 +87,38 @@
             <default>300</default>
             <min>0</min>
             <max>2000</max>
+        </entry>
+        <!-- The desktop widget. These settings apply when the widget is
+             on the desktop instead of in a panel. -->
+        <!-- theme, translucent, translucent-light, yellow, white, black,
+             red, orange, green, blue, pink or custom. See code/styles.js. -->
+        <entry name="desktopStyle" type="String">
+            <label>Colors of the desktop widget</label>
+            <default>theme</default>
+        </entry>
+        <entry name="desktopBackgroundColor" type="Color">
+            <label>Background color of the custom style</label>
+            <default>#fff59d</default>
+        </entry>
+        <entry name="desktopTextColor" type="Color">
+            <label>Text color of the custom style</label>
+            <default>#3b3a1f</default>
+        </entry>
+        <entry name="desktopOpacity" type="Int">
+            <label>Background opacity, in percent</label>
+            <default>100</default>
+            <min>10</min>
+            <max>100</max>
+        </entry>
+        <entry name="desktopFontSize" type="Int">
+            <label>Desktop widget font size, in points</label>
+            <default>11</default>
+            <min>8</min>
+            <max>48</max>
+        </entry>
+        <entry name="desktopShowControls" type="Bool">
+            <label>Show the new task field and the Open in Browser button</label>
+            <default>true</default>
         </entry>
     </group>
 </kcfg>

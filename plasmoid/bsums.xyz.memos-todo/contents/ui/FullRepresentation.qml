@@ -8,23 +8,34 @@ import org.kde.plasma.components as PlasmaComponents
 import org.kde.plasma.extras as PlasmaExtras
 import org.kde.kirigami as Kirigami
 
-// The popup. From top to bottom: a status line, the memo items, a
+import "../code/styles.js" as Styles
+
+// The popup, and the desktop widget. From top to bottom: a status line, the memo items, a
 // separator, the field for a new task, and the "Open in Browser" button.
-// This is the layout of the Cinnamon applet popup.
+// This is the layout of the Cinnamon applet popup. On the desktop the same
+// view fills the widget, with the colors of the "Desktop Widget" settings.
 PlasmaExtras.Representation {
     id: full
 
     // The PlasmoidItem of main.qml.
     required property var app
     readonly property var cfg: Plasmoid.configuration
-    readonly property real fontSize: cfg.popupFontSize
+    readonly property bool onDesktop: app.onDesktop
+    readonly property real fontSize: onDesktop ? cfg.desktopFontSize : cfg.popupFontSize
+    readonly property bool showControls: !onDesktop || cfg.desktopShowControls
+    // The colors of the desktop style, or null for the theme colors.
+    readonly property var style: app.customBackground
+                                 ? Styles.colors(cfg.desktopStyle, cfg.desktopBackgroundColor, cfg.desktopTextColor)
+                                 : null
     // The maximum height of the item list before it scrolls, as in the
-    // Cinnamon applet.
+    // Cinnamon applet. On the desktop the list takes the widget height.
     readonly property int maxListHeight: 450
 
-    Layout.minimumWidth: cfg.popupWidth
+    // The popup has the width from the settings. The desktop widget has
+    // the width that the user gives it, and starts at the popup width.
+    Layout.minimumWidth: onDesktop ? Kirigami.Units.gridUnit * 8 : cfg.popupWidth
     Layout.preferredWidth: cfg.popupWidth
-    Layout.maximumWidth: cfg.popupWidth
+    Layout.maximumWidth: onDesktop ? -1 : cfg.popupWidth
     // The popup opens at the height of its content. When it is made
     // taller, the item list takes the extra height.
     Layout.minimumHeight: Kirigami.Units.gridUnit * 8
@@ -32,12 +43,32 @@ PlasmaExtras.Representation {
 
     collapseMarginsHint: true
 
+    // The labels take the text color of the style.
+    readonly property color textColor: style ? style.text : Kirigami.Theme.textColor
+    // The theme colors outside the widget. The content below takes these,
+    // or the style colors, so that fields and buttons suit the background.
+    readonly property color themeBackgroundColor: Kirigami.Theme.backgroundColor
+    readonly property color themeTextColor: Kirigami.Theme.textColor
+
+    Rectangle {
+        anchors.fill: parent
+        // A widget at an angle on the desktop is drawn into a smoothed
+        // layer and then turned. The layer smooths an edge only where a
+        // transparent pixel is next to it, so the background stops short of
+        // the widget edge. The Plasma frame has such a margin as well.
+        anchors.margins: 2
+        visible: full.style !== null
+        radius: Kirigami.Units.cornerRadius
+        color: full.style ? full.style.background : "transparent"
+        opacity: full.style ? full.style.alpha * full.cfg.desktopOpacity / 100 : 1
+    }
+
     // Give the new task field the focus each time the popup opens.
     Connections {
         target: full.app
         function onExpandedChanged() {
-            if (full.app.expanded) {
-                newTaskField.forceActiveFocus();
+            if (full.app.expanded && !full.onDesktop && controls.item) {
+                controls.item.field.forceActiveFocus();
             }
         }
     }
@@ -48,6 +79,9 @@ PlasmaExtras.Representation {
         anchors.fill: parent
         anchors.margins: Kirigami.Units.largeSpacing
         spacing: Kirigami.Units.smallSpacing
+
+        Kirigami.Theme.textColor: full.style ? full.style.text : full.themeTextColor
+        Kirigami.Theme.backgroundColor: full.style ? full.style.background : full.themeBackgroundColor
 
         PlasmaComponents.ScrollView {
             id: scroll
@@ -70,7 +104,7 @@ PlasmaExtras.Representation {
                     visible: full.app.statusText !== ""
                     text: full.app.statusText
                     font.pointSize: full.fontSize
-                    color: full.app.hasError ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.textColor
+                    color: full.app.hasError ? Kirigami.Theme.negativeTextColor : full.textColor
                     wrapMode: Text.Wrap
                     textFormat: Text.PlainText
                 }
@@ -107,6 +141,7 @@ PlasmaExtras.Representation {
                             PlasmaComponents.Label {
                                 padding: Kirigami.Units.smallSpacing
                                 text: itemLoader.modelData.lines.join("\n")
+                                color: full.textColor
                                 font.pointSize: full.fontSize
                                 wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                                 textFormat: Text.PlainText
@@ -127,9 +162,26 @@ PlasmaExtras.Representation {
                                     Accessible.checked: itemLoader.modelData.checked
                                     Accessible.name: itemLoader.modelData.lines[0].substring(2)
                                     onClicked: full.app.toggleItem(itemLoader.index)
+                                    // The padding of the Cinnamon applet rows.
+                                    topPadding: Kirigami.Units.smallSpacing * 1.5
+                                    bottomPadding: Kirigami.Units.smallSpacing * 1.5
+                                    leftPadding: Kirigami.Units.smallSpacing * 2
+                                    rightPadding: Kirigami.Units.smallSpacing * 2
+
+                                    // The hover look of the Cinnamon applet: a light
+                                    // box with a rounded border.
+                                    background: Rectangle {
+                                        radius: Kirigami.Units.cornerRadius
+                                        color: todoButton.down ? full.tint(0.14)
+                                             : todoButton.hovered ? full.tint(0.08)
+                                             : "transparent"
+                                        border.color: todoButton.hovered || todoButton.visualFocus
+                                                      ? full.tint(0.2) : "transparent"
+                                    }
 
                                     contentItem: PlasmaComponents.Label {
                                         text: itemLoader.modelData.lines.join("\n")
+                                        color: full.textColor
                                         font.pointSize: full.fontSize
                                         font.strikeout: itemLoader.modelData.checked
                                         opacity: itemLoader.modelData.checked ? 0.6 : 1
@@ -167,51 +219,167 @@ PlasmaExtras.Representation {
             }
         }
 
-        Kirigami.Separator {
+        // The Plasma theme draws the field and the buttons from its own
+        // graphics, which do not take other colors. A colored style draws
+        // them in its own colors instead.
+        Loader {
+            id: controls
+
             Layout.fillWidth: true
-            Layout.topMargin: Kirigami.Units.smallSpacing
-            Layout.bottomMargin: Kirigami.Units.smallSpacing
-        }
-
-        RowLayout {
-            Layout.fillWidth: true
-            spacing: Kirigami.Units.smallSpacing
-
-            PlasmaComponents.TextField {
-                id: newTaskField
-
-                Layout.fillWidth: true
-                placeholderText: i18n("New task...")
-                font.pointSize: full.fontSize
-                enabled: full.app.configured
-                onAccepted: full.saveNewTask()
-            }
-
-            PlasmaComponents.Button {
-                text: " + "
-                font.pointSize: full.fontSize
-                enabled: full.app.configured && newTaskField.text.trim() !== ""
-                Accessible.name: i18n("Add task")
-                onClicked: full.saveNewTask()
-
-                PlasmaComponents.ToolTip.text: i18n("Add task")
-                PlasmaComponents.ToolTip.visible: hovered
-                PlasmaComponents.ToolTip.delay: Kirigami.Units.toolTipDelay
-            }
-        }
-
-        PlasmaComponents.Button {
-            Layout.fillWidth: true
-            text: i18n("Open in Browser")
-            font.pointSize: full.fontSize
-            enabled: full.app.configured
-            onClicked: full.app.openInBrowser()
+            visible: full.showControls
+            active: full.showControls
+            sourceComponent: full.style ? styledControls : themeControls
         }
     }
 
-    function saveNewTask() {
-        if (app.addItem(newTaskField.text)) {
-            newTaskField.clear();
+    Component {
+        id: themeControls
+
+        ColumnLayout {
+            readonly property Item field: newTaskField
+
+            spacing: Kirigami.Units.smallSpacing
+
+            Kirigami.Separator {
+                Layout.fillWidth: true
+                Layout.topMargin: Kirigami.Units.smallSpacing
+                Layout.bottomMargin: Kirigami.Units.smallSpacing
+            }
+
+            RowLayout {
+                Layout.fillWidth: true
+                spacing: Kirigami.Units.smallSpacing
+
+                PlasmaComponents.TextField {
+                    id: newTaskField
+
+                    Layout.fillWidth: true
+                    placeholderText: i18n("New task...")
+                    font.pointSize: full.fontSize
+                    enabled: full.app.configured
+                    onAccepted: full.saveNewTask(newTaskField)
+                }
+
+                PlasmaComponents.Button {
+                    text: " + "
+                    font.pointSize: full.fontSize
+                    enabled: full.app.configured && newTaskField.text.trim() !== ""
+                    Accessible.name: i18n("Add task")
+                    onClicked: full.saveNewTask(newTaskField)
+
+                    PlasmaComponents.ToolTip.text: i18n("Add task")
+                    PlasmaComponents.ToolTip.visible: hovered
+                    PlasmaComponents.ToolTip.delay: Kirigami.Units.toolTipDelay
+                }
+            }
+
+            PlasmaComponents.Button {
+                Layout.fillWidth: true
+                text: i18n("Open in Browser")
+                font.pointSize: full.fontSize
+                enabled: full.app.configured
+                onClicked: full.app.openInBrowser()
+            }
+        }
+    }
+
+    Component {
+        id: styledControls
+
+        ColumnLayout {
+            readonly property Item field: styledField
+
+            spacing: Kirigami.Units.smallSpacing
+
+            Rectangle {
+                Layout.fillWidth: true
+                Layout.topMargin: Kirigami.Units.smallSpacing
+                Layout.bottomMargin: Kirigami.Units.smallSpacing
+                implicitHeight: 1
+                color: full.tint(0.25)
+            }
+
+            RowLayout {
+                Layout.fillWidth: true
+                spacing: Kirigami.Units.smallSpacing
+
+                QQC2.TextField {
+                    id: styledField
+
+                    Layout.fillWidth: true
+                    placeholderText: i18n("New task...")
+                    placeholderTextColor: full.tint(0.55)
+                    color: full.textColor
+                    selectionColor: full.tint(0.3)
+                    selectedTextColor: full.textColor
+                    font.pointSize: full.fontSize
+                    enabled: full.app.configured
+                    onAccepted: full.saveNewTask(styledField)
+
+                    background: Rectangle {
+                        radius: Kirigami.Units.cornerRadius
+                        color: full.tint(0.08)
+                        border.color: full.tint(styledField.activeFocus ? 0.6 : 0.25)
+                    }
+                }
+
+                StyledButton {
+                    id: addButton
+                    text: " + "
+                    enabled: full.app.configured && styledField.text.trim() !== ""
+                    Accessible.name: i18n("Add task")
+                    onClicked: full.saveNewTask(styledField)
+
+                    QQC2.ToolTip.text: i18n("Add task")
+                    QQC2.ToolTip.visible: hovered
+                    QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+                }
+            }
+
+            StyledButton {
+                Layout.fillWidth: true
+                text: i18n("Open in Browser")
+                enabled: full.app.configured
+                onClicked: full.app.openInBrowser()
+            }
+        }
+    }
+
+    // A button in the colors of the style, after the bottom buttons of the
+    // Cinnamon applet.
+    component StyledButton: QQC2.Button {
+        id: styledButton
+
+        font.pointSize: full.fontSize
+        opacity: enabled ? 1 : 0.5
+        leftPadding: Kirigami.Units.largeSpacing
+        rightPadding: Kirigami.Units.largeSpacing
+        topPadding: Kirigami.Units.smallSpacing
+        bottomPadding: Kirigami.Units.smallSpacing
+
+        contentItem: QQC2.Label {
+            text: styledButton.text
+            font: styledButton.font
+            color: full.textColor
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+        }
+        background: Rectangle {
+            implicitHeight: Kirigami.Units.gridUnit * 1.6
+            radius: Kirigami.Units.cornerRadius
+            color: full.tint(styledButton.down ? 0.2 : styledButton.hovered ? 0.14 : 0.07)
+            border.color: full.tint(styledButton.hovered || styledButton.activeFocus ? 0.35 : 0.15)
+        }
+    }
+
+    // The text color of the view with the opacity a.
+    function tint(a) {
+        return Qt.rgba(textColor.r, textColor.g, textColor.b, a);
+    }
+
+    function saveNewTask(field) {
+        if (app.addItem(field.text)) {
+            field.clear();
             // Show the new task, which is at the end of the list.
             Qt.callLater(() => {
                 const flick = scroll.contentItem;

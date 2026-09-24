@@ -14,7 +14,7 @@ KCM.SimpleKCM {
     property alias cfg_authToken: authTokenField.text
     property string cfg_authTokenDefault: ""
     property alias cfg_memoId: memoIdField.text
-    property string cfg_memoIdDefault: "1"
+    property string cfg_memoIdDefault: ""
     property alias cfg_refreshInterval: refreshSpin.value
     property int cfg_refreshIntervalDefault: 10
     property alias cfg_popupFontSize: popupFontSpin.value
@@ -42,6 +42,22 @@ KCM.SimpleKCM {
         Item {
             Kirigami.FormData.isSection: true
             Kirigami.FormData.label: i18n("Connection")
+        }
+
+        // Credit to the project this widget depends on.
+        QQC2.Label {
+            Layout.fillWidth: true
+            Layout.maximumWidth: Kirigami.Units.gridUnit * 18
+            wrapMode: Text.Wrap
+            textFormat: Text.StyledText
+            linkColor: Kirigami.Theme.linkColor
+            text: i18n("Memos ToDo needs a server running UseMemos, the open-source, self-hosted note service. Find out more at %1.",
+                       "<a href=\"https://usememos.com\">usememos.com</a>")
+            onLinkActivated: (link) => Qt.openUrlExternally(link)
+
+            HoverHandler {
+                cursorShape: parent.hoveredLink !== "" ? Qt.PointingHandCursor : Qt.ArrowCursor
+            }
         }
 
         RowLayout {
@@ -72,6 +88,15 @@ KCM.SimpleKCM {
             Kirigami.ContextualHelpButton {
                 toolTipText: i18n("Your API Access Token (Bearer token not including 'Bearer ' prefix)")
             }
+        }
+
+        QQC2.Label {
+            Layout.fillWidth: true
+            Layout.maximumWidth: Kirigami.Units.gridUnit * 18
+            wrapMode: Text.Wrap
+            font: Kirigami.Theme.smallFont
+            opacity: 0.7
+            text: i18n("All Memos ToDo widgets share the server URL and the access token. Each widget has its own memo ID.")
         }
 
         RowLayout {

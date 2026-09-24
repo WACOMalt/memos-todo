@@ -4,6 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Memos ToDo\n"
 "Report-Msgid-Bugs-To: https://github.com/WACOMalt/memos-todo/issues\n"
+"POT-Creation-Date: 2026-09-24 15:03-0400\n"
 "PO-Revision-Date: 2026-09-23 00:00+0000\n"
 "Last-Translator: WACOMalt\n"
 "Language-Team: Spanish\n"
@@ -16,8 +17,104 @@ msgstr ""
 msgid "General"
 msgstr "General"
 
+msgid "Desktop Widget"
+msgstr "Widget de escritorio"
+
+msgid "Plasma theme"
+msgstr "Tema de Plasma"
+
+msgid "Translucent"
+msgstr "Translúcido"
+
+msgid "Translucent light"
+msgstr "Translúcido claro"
+
+msgid "Yellow"
+msgstr "Amarillo"
+
+msgid "White"
+msgstr "Blanco"
+
+msgid "Black"
+msgstr "Negro"
+
+msgid "Red"
+msgstr "Rojo"
+
+msgid "Orange"
+msgstr "Naranja"
+
+msgid "Green"
+msgstr "Verde"
+
+msgid "Blue"
+msgstr "Azul"
+
+msgid "Pink"
+msgstr "Rosa"
+
+msgid "Custom colors"
+msgstr "Colores personalizados"
+
+msgid ""
+"These settings apply when the widget is on the desktop. In a panel, the "
+"widget uses the General settings."
+msgstr ""
+"Estos ajustes se aplican cuando el widget está en el escritorio. En un "
+"panel, el widget usa los ajustes generales."
+
+msgid "Colors:"
+msgstr "Colores:"
+
+msgid "Background color:"
+msgstr "Color de fondo:"
+
+msgid "Background color"
+msgstr "Color de fondo"
+
+msgid "Text color:"
+msgstr "Color del texto:"
+
+msgid "Text color"
+msgstr "Color del texto"
+
+msgid "Background opacity:"
+msgstr "Opacidad del fondo:"
+
+#, qt-format
+msgid "%1 %"
+msgstr "%1 %"
+
+msgid "Font size:"
+msgstr "Tamaño de fuente:"
+
+#, qt-format
+msgid "%1 pt"
+msgstr "%1 pt"
+
+msgid "Show:"
+msgstr "Mostrar:"
+
+msgid "New task field and Open in Browser button"
+msgstr "Campo de nueva tarea y botón Abrir en el navegador"
+
+msgid "Preview:"
+msgstr "Vista previa:"
+
+msgid "A completed task"
+msgstr "Una tarea completada"
+
+msgid "An open task"
+msgstr "Una tarea pendiente"
+
 msgid "Connection"
 msgstr "Conexión"
+
+#, qt-format
+msgid ""
+"Memos ToDo needs a server running UseMemos, the open-source, self-hosted "
+"note service. Find out more at %1."
+msgstr "Memos ToDo necesita un servidor con UseMemos, el servicio de notas de código abierto y autoalojado. Más información en %1."
 
 msgid "Server URL:"
 msgstr "URL del servidor:"
@@ -29,17 +126,29 @@ msgid "Access token:"
 msgstr "Token de acceso:"
 
 msgid "Your API Access Token (Bearer token not including 'Bearer ' prefix)"
-msgstr "Su token de acceso API (token de portador que no incluye el prefijo 'Bearer ')"
+msgstr ""
+"Su token de acceso API (token de portador que no incluye el prefijo 'Bearer "
+"')"
+
+msgid ""
+"All Memos ToDo widgets share the server URL and the access token. Each "
+"widget has its own memo ID."
+msgstr ""
+"Todos los widgets de Memos ToDo comparten la URL del servidor y el token de "
+"acceso. Cada widget tiene su propio ID de memo."
 
 msgid "Memo ID:"
 msgstr "ID del memo:"
 
 msgid "The ID of the memo you want to show (found in the memo URL or details)"
-msgstr "El ID del memo que desea mostrar (se encuentra en la URL o los detalles del memo)"
+msgstr ""
+"El ID del memo que desea mostrar (se encuentra en la URL o los detalles del "
+"memo)"
 
 msgid "Refresh interval:"
 msgstr "Intervalo de actualización:"
 
+#, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
 msgstr[0] "%1 minuto"
@@ -51,12 +160,10 @@ msgstr "Menú"
 msgid "Popup font size:"
 msgstr "Tamaño de fuente del menú:"
 
-msgid "%1 pt"
-msgstr "%1 pt"
-
 msgid "Popup width:"
 msgstr "Ancho del menú:"
 
+#, qt-format
 msgid "%1 px"
 msgstr "%1 px"
 
@@ -81,6 +188,7 @@ msgstr "Mostrar tareas completadas en el panel"
 msgid "Text cycle interval:"
 msgstr "Intervalo de ciclo de texto:"
 
+#, qt-format
 msgid "%1 second"
 msgid_plural "%1 seconds"
 msgstr[0] "%1 segundo"
@@ -92,6 +200,7 @@ msgstr "Tiempo para mostrar cada línea antes de pasar a la siguiente"
 msgid "Panel slide duration:"
 msgstr "Duración del deslizamiento del panel:"
 
+#, qt-format
 msgid "%1 ms"
 msgstr "%1 ms"
 
@@ -113,11 +222,23 @@ msgstr "Añadir tarea"
 msgid "Open in Browser"
 msgstr "Abrir en el navegador"
 
+msgid "Please configure Server URL, Token and Memo ID in settings."
+msgstr ""
+"Configure la URL del servidor, el token y el ID del memo en los ajustes."
+
+msgid "Memo ID not set. Enter the ID of the memo to show in the settings."
+msgstr ""
+"ID del memo no configurado. Introduzca en los ajustes el ID del memo que "
+"desea mostrar."
+
 msgid "Loading..."
 msgstr "Cargando..."
 
 msgid "Configure Settings"
 msgstr "Configurar ajustes"
+
+msgid "Memo ID not set"
+msgstr "ID del memo no configurado"
 
 msgid "Error"
 msgstr "Error"
@@ -128,9 +249,7 @@ msgstr "Memo vacío"
 msgid "Memos ToDo"
 msgstr "Memos ToDo"
 
-msgid "Please configure Server URL, Token and Memo ID in settings."
-msgstr "Configure la URL del servidor, el token y el ID del memo en los ajustes."
-
+#, qt-format
 msgid "%1 open task"
 msgid_plural "%1 open tasks"
 msgstr[0] "%1 tarea pendiente"
@@ -142,6 +261,13 @@ msgstr "Actualizar"
 msgid "Connection Error"
 msgstr "Error de conexión"
 
+msgid "Memo not found. Check the memo ID in the settings."
+msgstr "No se encontró el memo. Compruebe el ID del memo en los ajustes."
+
+msgid "Access token rejected. Check the token in the settings."
+msgstr "Token de acceso rechazado. Compruebe el token en los ajustes."
+
+#, qt-format
 msgid "Error %1"
 msgstr "Error %1"
 
