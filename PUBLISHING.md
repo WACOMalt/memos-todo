@@ -59,6 +59,7 @@ rsvg-convert -w 512 -h 512 logo/logo.svg -o logo/logo.png
 - `screenshots/popup.png`: the popup
 - `screenshots/widget.png`: the desktop widget in the Blue style, at an angle
 - `screenshots/settings.png`: the General settings page
+- `screenshots/aboutpanel.png`: the About page of the settings
 
 The screenshots show a demo memo and no server address, token or memo ID.
 Make new screenshots when the panel label, the popup, the desktop widget or
