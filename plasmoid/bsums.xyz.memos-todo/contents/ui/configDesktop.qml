@@ -4,6 +4,7 @@ import QtQuick.Controls as QQC2
 import org.kde.kcmutils as KCM
 import org.kde.kirigami as Kirigami
 import org.kde.kquickcontrols as KQuickControls
+import org.kde.ksvg as KSvg
 
 import "../code/styles.js" as Styles
 
@@ -41,6 +42,8 @@ KCM.SimpleKCM {
     })
 
     readonly property var previewColors: Styles.colors(cfg_desktopStyle, backgroundButton.color, textButton.color)
+    readonly property string previewNote:
+        previewColors ? Styles.noteElement(previewColors.svg, (id) => notesSvg.hasElement(id)) : ""
 
     ColumnLayout {
         width: page.width
@@ -138,18 +141,33 @@ KCM.SimpleKCM {
                 border.color: Kirigami.ColorUtils.linearInterpolation(Kirigami.Theme.backgroundColor, Kirigami.Theme.textColor, 0.2)
                 border.width: page.previewColors ? 0 : 1
 
+                KSvg.Svg {
+                    id: notesSvg
+                    imagePath: "widgets/notes"
+                }
+
+                // The note image of a preset, as on the desktop.
+                KSvg.SvgItem {
+                    anchors.fill: parent
+                    visible: page.previewNote !== ""
+                    svg: notesSvg
+                    elementId: page.previewNote
+                    opacity: opacitySlider.value / 100
+                }
+
+                // The plain background of the custom colors.
                 Rectangle {
                     anchors.fill: parent
                     radius: parent.radius
-                    visible: page.previewColors !== null
+                    visible: page.previewColors !== null && page.previewColors.svg === ""
                     color: page.previewColors ? page.previewColors.background : "transparent"
-                    opacity: page.previewColors ? page.previewColors.alpha * opacitySlider.value / 100 : 1
+                    opacity: opacitySlider.value / 100
                 }
 
                 ColumnLayout {
                     id: previewColumn
                     anchors.fill: parent
-                    anchors.margins: Kirigami.Units.largeSpacing
+                    anchors.margins: Kirigami.Units.largeSpacing + (page.previewNote !== "" ? Math.round(parent.width * 0.04) : 0)
                     spacing: Kirigami.Units.smallSpacing
 
                     Repeater {

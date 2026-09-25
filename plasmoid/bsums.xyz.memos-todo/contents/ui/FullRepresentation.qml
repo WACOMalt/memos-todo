@@ -7,6 +7,7 @@ import org.kde.plasma.plasmoid
 import org.kde.plasma.components as PlasmaComponents
 import org.kde.plasma.extras as PlasmaExtras
 import org.kde.kirigami as Kirigami
+import org.kde.ksvg as KSvg
 
 import "../code/styles.js" as Styles
 
@@ -50,17 +51,70 @@ PlasmaExtras.Representation {
     readonly property color themeBackgroundColor: Kirigami.Theme.backgroundColor
     readonly property color themeTextColor: Kirigami.Theme.textColor
 
-    Rectangle {
+    // A widget at an angle on the desktop is drawn into a layer, which is
+    // then turned without smoothing a hard edge. So the background needs a
+    // soft edge of its own, like the note image of the sticky note widget.
+
+    KSvg.Svg {
+        id: notesSvg
+        imagePath: "widgets/notes"
+    }
+
+    // The note image of the Plasma theme, for the preset styles. It has a
+    // transparent margin of about 4 % on each side.
+    readonly property string noteElement:
+        style ? Styles.noteElement(style.svg, (id) => notesSvg.hasElement(id)) : ""
+    readonly property real noteMarginX: noteElement !== "" ? Math.round(width * 0.04) : 0
+    readonly property real noteMarginY: noteElement !== "" ? Math.round(height * 0.04) : 0
+
+    KSvg.SvgItem {
         anchors.fill: parent
-        // A widget at an angle on the desktop is drawn into a smoothed
-        // layer and then turned. The layer smooths an edge only where a
-        // transparent pixel is next to it, so the background stops short of
-        // the widget edge. The Plasma frame has such a margin as well.
-        anchors.margins: 2
-        visible: full.style !== null
-        radius: Kirigami.Units.cornerRadius
-        color: full.style ? full.style.background : "transparent"
-        opacity: full.style ? full.style.alpha * full.cfg.desktopOpacity / 100 : 1
+        visible: full.noteElement !== ""
+        svg: notesSvg
+        elementId: full.noteElement
+        opacity: full.cfg.desktopOpacity / 100
+    }
+
+    // The custom colors have no note image, so their background is painted
+    // as an image too, with a soft shadow like the note image has. When the
+    // widget is turned, Plasma does not smooth its edges; the shadow makes
+    // the edge a soft change over a few pixels instead of a hard step.
+    readonly property color customBackground: style && style.svg === "" ? style.background : "transparent"
+    readonly property int customMargin: style && style.svg === "" ? 8 : 0
+
+    Canvas {
+        id: customCanvas
+
+        anchors.fill: parent
+        visible: full.style !== null && full.style.svg === ""
+        opacity: full.cfg.desktopOpacity / 100
+
+        onWidthChanged: requestPaint()
+        onHeightChanged: requestPaint()
+        onVisibleChanged: requestPaint()
+
+        onPaint: {
+            const ctx = getContext("2d");
+            ctx.reset();
+            if (!visible)
+                return;
+            // Room for the shadow around the background, as the note image
+            // has.
+            const m = full.customMargin;
+            const r = Kirigami.Units.cornerRadius;
+            ctx.shadowColor = Qt.rgba(0, 0, 0, 0.35);
+            ctx.shadowBlur = m - 2;
+            ctx.shadowOffsetY = 1;
+            ctx.fillStyle = full.customBackground;
+            ctx.beginPath();
+            ctx.roundedRect(m, m, width - 2 * m, height - 2 * m, r, r);
+            ctx.fill();
+        }
+
+        Connections {
+            target: full
+            function onCustomBackgroundChanged() { customCanvas.requestPaint() }
+        }
     }
 
     // Give the new task field the focus each time the popup opens.
@@ -77,7 +131,10 @@ PlasmaExtras.Representation {
         id: content
 
         anchors.fill: parent
-        anchors.margins: Kirigami.Units.largeSpacing
+        anchors.leftMargin: Kirigami.Units.largeSpacing + full.noteMarginX + full.customMargin
+        anchors.rightMargin: Kirigami.Units.largeSpacing + full.noteMarginX + full.customMargin
+        anchors.topMargin: Kirigami.Units.largeSpacing + full.noteMarginY + full.customMargin
+        anchors.bottomMargin: Kirigami.Units.largeSpacing + full.noteMarginY + full.customMargin
         spacing: Kirigami.Units.smallSpacing
 
         Kirigami.Theme.textColor: full.style ? full.style.text : full.themeTextColor

@@ -85,7 +85,9 @@ The right-click menu also has "Refresh" and "Open in Browser".
 Drag the widget from "Add Widgets" to the desktop instead of a panel. On the
 desktop it shows the task list, the "New task..." field and the "Open in
 Browser" button, and you can resize it. The "Desktop Widget" page of the
-settings sets its look:
+settings sets its look. The color presets draw the same note images as the
+sticky note widget of Plasma, so they look the same, also when you turn the
+widget at an angle:
 
 | Setting | Default | Description |
 | --- | --- | --- |
